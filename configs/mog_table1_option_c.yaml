@@ -1,0 +1,100 @@
+seed: 0
+device: cuda
+
+# Mixture of Gaussians benchmark — reproduces Table 1 and Fig. 3 (NoisyFlow §5.1).
+# K=3 clients, d=50, C=6 classes, nref-train=100.
+#
+# Stage II uses the ICNN dual OT (train_ot_stage2, default path):
+#   - Both cellot and rectified_flow are disabled → falls through to ICNN + approx_conjugate.
+#   - Option B (post-processing): OT trained on synthetic source samples only, no DP cost.
+#   - The ICNN learns the Brenier map T*(x) = ∇Φ(x), which is the unique optimal coupling.
+#     Unlike RectifiedFlow (random-coupling flow, good SW2 but class-scrambled), the Brenier
+#     map naturally preserves cluster topology: source cluster k maps to target cluster k.
+# Stage I uses DP-SGD with nm=0.8 → ε_stage1 ≈ 20, delta=1e-5 (total budget).
+
+data:
+  type: federated_mixture_gaussians
+  params:
+    K: 3
+    n_per_client: 1500
+    n_target_ref: 2000
+    n_target_test: 1000
+    d: 50
+    num_classes: 6
+    component_scale: 0.45
+    component_cov: 1.15
+    seed: 0
+
+loaders:
+  batch_size: 256
+  target_batch_size: 256
+  test_batch_size: 512
+  synth_batch_size: 512
+  drop_last: true
+
+stage1:
+  epochs: 20
+  lr: 0.001
+  hidden: [128, 128]
+  time_emb_dim: 32
+  label_emb_dim: 32
+  label_prior:
+    enabled: true
+    mechanism: gaussian
+    sigma: 1.0
+  dp:
+    enabled: true
+    max_grad_norm: 1.0
+    # nm=0.8: Stage I DP only; Stage II is post-processing (no additional ε).
+    # Tuned so that ε_stage1 ≈ 20 at delta=1e-5.
+    noise_multiplier: 0.8
+    delta: 1e-5
+    grad_sample_mode: functorch
+
+stage2:
+  option: B        # post-processing: OT trained on synthetic source only, no DP cost
+  pair_by_label: false   # ICNN dual OT learns over full marginals; no per-class pairing needed
+  pair_by_ot: false
+  epochs: 100
+  lr: 0.001
+  max_grad_norm: 1.0      # clip ICNN parameter gradients — prevents potential divergence
+  hidden: [128, 128]      # ICNN hidden layers for d=50
+  act: relu               # relu is more numerically stable than softplus for ICNN
+  add_strong_convexity: 0.5   # λ/2 * |x|² term enforces convexity and bounds the gradient
+  flow_steps: 50
+  conj_steps: 50          # more inner steps → more accurate Φ*(y) estimate
+  conj_lr: 0.05           # smaller inner step for stability in d=50
+  conj_clamp: 5.0         # tighter clamp on x during inner optimization
+  dp:
+    enabled: false  # Stage II is post-processing; DP budget comes entirely from Stage I
+    max_grad_norm: 1.0
+    noise_multiplier: 1.0
+    delta: 1e-5
+    grad_sample_mode: functorch
+  cellot:
+    enabled: false   # do NOT use CellOT adversarial (only supports Option A)
+  rectified_flow:
+    enabled: false   # do NOT use RectifiedFlow (random-coupling; scrambles class labels)
+
+stage3:
+  epochs: 30
+  lr: 0.001
+  hidden: [128, 128]
+  flow_steps: 50
+  M_per_client: 5000
+  ref_train_size: 100
+
+privacy_curve:
+  enabled: false
+
+membership_inference:
+  enabled: false
+
+shadow_mia:
+  enabled: false
+
+stage_mia:
+  enabled: false
+
+stage_shadow_mia:
+  enabled: false
