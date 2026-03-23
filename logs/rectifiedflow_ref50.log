@@ -1,0 +1,104 @@
+/home/nk725/.venv/lib/python3.12/site-packages/opacus/privacy_engine.py:96: UserWarning: Secure RNG turned off. This is perfectly fine for experimentation as it allows for much faster training performance, but remember to turn it on and retrain one last time before production with ``secure_mode`` turned on.
+  warnings.warn(
+03/23/2026 15:49:16:WARNING:Ignoring drop_last as it is not compatible with DPDataLoader.
+sys:1: UserWarning: Full backward hook is firing when gradients are computed with respect to module outputs since no inputs require gradients. See https://docs.pytorch.org/docs/main/generated/torch.nn.Module.html#torch.nn.Module.register_full_backward_hook for more details.
+03/23/2026 15:49:23:WARNING:Ignoring drop_last as it is not compatible with DPDataLoader.
+03/23/2026 15:49:30:WARNING:Ignoring drop_last as it is not compatible with DPDataLoader.
+03/23/2026 15:49:37:WARNING:Ignoring drop_last as it is not compatible with DPDataLoader.
+/home/nk725/.venv/lib/python3.12/site-packages/opacus/accountants/analysis/prv/prvs.py:67: RuntimeWarning: divide by zero encountered in log
+  z = np.log(np.where(t > np.log(1 - q), (np.exp(t) + q - 1) / q, 1))
+/home/nk725/.venv/lib/python3.12/site-packages/opacus/accountants/analysis/prv/prvs.py:70: RuntimeWarning: divide by zero encountered in log
+  t > np.log(1 - q),
+03/23/2026 15:49:43:WARNING:Ignoring drop_last as it is not compatible with DPDataLoader.
+03/23/2026 15:49:50:WARNING:Ignoring drop_last as it is not compatible with DPDataLoader.
+03/23/2026 15:49:57:WARNING:Ignoring drop_last as it is not compatible with DPDataLoader.
+[Stage I] epoch 0006/30  loss=188.9521
+[Stage I] epoch 0012/30  loss=183.4001
+[Stage I] epoch 0018/30  loss=159.3846
+[Stage I] epoch 0024/30  loss=165.4050
+[Stage I] epoch 0030/30  loss=152.6848
+[Stage I] DP eps=6.250, delta=1e-05
+[Stage II/RectifiedFlow-B] epoch 0006/30  loss=99.0641
+[Stage II/RectifiedFlow-B] epoch 0012/30  loss=92.3415
+[Stage II/RectifiedFlow-B] epoch 0018/30  loss=84.2594
+[Stage II/RectifiedFlow-B] epoch 0024/30  loss=86.3210
+[Stage II/RectifiedFlow-B] epoch 0030/30  loss=87.8709
+[Stage I] epoch 0006/30  loss=157.1499
+[Stage I] epoch 0012/30  loss=146.1461
+[Stage I] epoch 0018/30  loss=132.2375
+[Stage I] epoch 0024/30  loss=129.6769
+[Stage I] epoch 0030/30  loss=122.2329
+[Stage I] DP eps=2.258, delta=1e-05
+[Stage II/RectifiedFlow-B] epoch 0006/30  loss=98.9174
+[Stage II/RectifiedFlow-B] epoch 0012/30  loss=89.0289
+[Stage II/RectifiedFlow-B] epoch 0018/30  loss=85.8156
+[Stage II/RectifiedFlow-B] epoch 0024/30  loss=81.4656
+[Stage II/RectifiedFlow-B] epoch 0030/30  loss=83.5746
+[Stage I] epoch 0006/30  loss=167.4150
+[Stage I] epoch 0012/30  loss=163.9973
+[Stage I] epoch 0018/30  loss=141.7210
+[Stage I] epoch 0024/30  loss=135.6657
+[Stage I] epoch 0030/30  loss=131.6882
+[Stage I] DP eps=2.845, delta=1e-05
+[Stage II/RectifiedFlow-B] epoch 0006/30  loss=108.7797
+[Stage II/RectifiedFlow-B] epoch 0012/30  loss=92.1890
+[Stage II/RectifiedFlow-B] epoch 0018/30  loss=88.2219
+[Stage II/RectifiedFlow-B] epoch 0024/30  loss=85.9564
+[Stage II/RectifiedFlow-B] epoch 0030/30  loss=87.9555
+[Stage I] epoch 0006/30  loss=176.0288
+[Stage I] epoch 0012/30  loss=172.8437
+[Stage I] epoch 0018/30  loss=173.6927
+[Stage I] epoch 0024/30  loss=172.2948
+[Stage I] epoch 0030/30  loss=171.1209
+[Stage I] DP eps=8.951, delta=1e-05
+[Stage II/RectifiedFlow-B] epoch 0006/30  loss=103.4731
+[Stage II/RectifiedFlow-B] epoch 0012/30  loss=97.4843
+[Stage II/RectifiedFlow-B] epoch 0018/30  loss=86.3867
+[Stage II/RectifiedFlow-B] epoch 0024/30  loss=90.0112
+[Stage II/RectifiedFlow-B] epoch 0030/30  loss=86.6783
+[Stage I] epoch 0006/30  loss=151.9759
+[Stage I] epoch 0012/30  loss=150.0066
+[Stage I] epoch 0018/30  loss=135.6581
+[Stage I] epoch 0024/30  loss=138.7577
+[Stage I] epoch 0030/30  loss=139.3327
+[Stage I] DP eps=2.845, delta=1e-05
+[Stage II/RectifiedFlow-B] epoch 0006/30  loss=99.5116
+[Stage II/RectifiedFlow-B] epoch 0012/30  loss=91.2294
+[Stage II/RectifiedFlow-B] epoch 0018/30  loss=86.6138
+[Stage II/RectifiedFlow-B] epoch 0024/30  loss=85.7066
+[Stage II/RectifiedFlow-B] epoch 0030/30  loss=81.6055
+[Stage I] epoch 0006/30  loss=155.3851
+[Stage I] epoch 0012/30  loss=155.3523
+[Stage I] epoch 0018/30  loss=141.8238
+[Stage I] epoch 0024/30  loss=147.5838
+[Stage I] epoch 0030/30  loss=131.8326
+[Stage I] DP eps=2.660, delta=1e-05
+[Stage II/RectifiedFlow-B] epoch 0006/30  loss=102.9660
+[Stage II/RectifiedFlow-B] epoch 0012/30  loss=89.8275
+[Stage II/RectifiedFlow-B] epoch 0018/30  loss=82.6970
+[Stage II/RectifiedFlow-B] epoch 0024/30  loss=83.3979
+[Stage II/RectifiedFlow-B] epoch 0030/30  loss=82.7554
+[Stage I] epoch 0006/30  loss=153.1600
+[Stage I] epoch 0012/30  loss=139.2881
+[Stage I] epoch 0018/30  loss=136.7602
+[Stage I] epoch 0024/30  loss=140.3173
+[Stage I] epoch 0030/30  loss=133.4467
+[Stage I] DP eps=2.660, delta=1e-05
+[Stage II/RectifiedFlow-B] epoch 0006/30  loss=102.7452
+[Stage II/RectifiedFlow-B] epoch 0012/30  loss=92.7172
+[Stage II/RectifiedFlow-B] epoch 0018/30  loss=84.6562
+[Stage II/RectifiedFlow-B] epoch 0024/30  loss=88.1676
+[Stage II/RectifiedFlow-B] epoch 0030/30  loss=83.1230
+[Server] client 0 synthesized 72 samples
+[Server] client 1 synthesized 72 samples
+[Server] client 2 synthesized 72 samples
+[Server] client 3 synthesized 72 samples
+[Server] client 4 synthesized 72 samples
+[Server] client 5 synthesized 72 samples
+[Server] client 6 synthesized 72 samples
+[Metrics/SW2] private~ref=0.6761  synth~ref=0.7489  transported~ref=0.2735
+[Metrics/MMD] min=0.002739 mean=0.004494
+[Classifier/RF-synth] train_n=504  test_n=1324  n_estimators=200  test_acc=0.687
+[Classifier/RF-ref_only] train_n=50  test_n=1324  n_estimators=200  test_acc=0.852
+[Classifier/RF-ref+syn] train_n=554  test_n=1324  n_estimators=200  test_acc=0.785
+Final stats: {'clf_loss': nan, 'train_n': 504.0, 'acc': 0.6873111782477341, 'test_n': 1324.0, 'mmd_rbf_min': 0.0027393391355872154, 'mmd_rbf_mean': 0.004493559943512082, 'sw2_private_ref': 0.6760693192481995, 'sw2_synth_ref': 0.748942494392395, 'sw2_synth_transported_ref': 0.27347493171691895, 'epsilon_flow_max': 8.950776796516083, 'epsilon_total_max': 8.950776796516083, 'clf_loss_ref_only': nan, 'acc_ref_only': 0.851963746223565, 'clf_loss_ref_plus_synth': nan, 'acc_ref_plus_synth': 0.7854984894259819}

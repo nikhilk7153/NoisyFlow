@@ -1,0 +1,83 @@
+[Stage I] epoch 0002/10  loss=176.1761
+[Stage I] epoch 0004/10  loss=169.9186
+[Stage I] epoch 0006/10  loss=155.9554
+[Stage I] epoch 0008/10  loss=147.4893
+[Stage I] epoch 0010/10  loss=149.9389
+[Stage II/RectifiedFlow-B] epoch 0002/10  loss=125.5938
+[Stage II/RectifiedFlow-B] epoch 0004/10  loss=121.6687
+[Stage II/RectifiedFlow-B] epoch 0006/10  loss=116.8908
+[Stage II/RectifiedFlow-B] epoch 0008/10  loss=112.6167
+[Stage II/RectifiedFlow-B] epoch 0010/10  loss=115.4992
+[Stage I] epoch 0002/10  loss=127.8518
+[Stage I] epoch 0004/10  loss=133.0596
+[Stage I] epoch 0006/10  loss=111.7000
+[Stage I] epoch 0008/10  loss=118.1563
+[Stage I] epoch 0010/10  loss=112.0614
+[Stage II/RectifiedFlow-B] epoch 0002/10  loss=136.6985
+[Stage II/RectifiedFlow-B] epoch 0004/10  loss=136.8013
+[Stage II/RectifiedFlow-B] epoch 0006/10  loss=132.7806
+[Stage II/RectifiedFlow-B] epoch 0008/10  loss=116.1326
+[Stage II/RectifiedFlow-B] epoch 0010/10  loss=120.9399
+[Stage I] epoch 0002/10  loss=147.1318
+[Stage I] epoch 0004/10  loss=125.6958
+[Stage I] epoch 0006/10  loss=127.9665
+[Stage I] epoch 0008/10  loss=122.8556
+[Stage I] epoch 0010/10  loss=118.4229
+[Stage II/RectifiedFlow-B] epoch 0002/10  loss=136.7570
+[Stage II/RectifiedFlow-B] epoch 0004/10  loss=132.5718
+[Stage II/RectifiedFlow-B] epoch 0006/10  loss=123.2216
+[Stage II/RectifiedFlow-B] epoch 0008/10  loss=120.8123
+[Stage II/RectifiedFlow-B] epoch 0010/10  loss=124.8402
+[Stage I] epoch 0002/10  loss=179.9975
+[Stage I] epoch 0004/10  loss=176.3919
+[Stage I] epoch 0006/10  loss=173.3750
+[Stage I] epoch 0008/10  loss=158.9276
+[Stage I] epoch 0010/10  loss=159.0741
+[Stage II/RectifiedFlow-B] epoch 0002/10  loss=131.5411
+[Stage II/RectifiedFlow-B] epoch 0004/10  loss=120.0230
+[Stage II/RectifiedFlow-B] epoch 0006/10  loss=116.8293
+[Stage II/RectifiedFlow-B] epoch 0008/10  loss=109.6688
+[Stage II/RectifiedFlow-B] epoch 0010/10  loss=114.3647
+[Stage I] epoch 0002/10  loss=143.3203
+[Stage I] epoch 0004/10  loss=123.1082
+[Stage I] epoch 0006/10  loss=119.7703
+[Stage I] epoch 0008/10  loss=117.8451
+[Stage I] epoch 0010/10  loss=113.9017
+[Stage II/RectifiedFlow-B] epoch 0002/10  loss=129.6180
+[Stage II/RectifiedFlow-B] epoch 0004/10  loss=128.9365
+[Stage II/RectifiedFlow-B] epoch 0006/10  loss=119.0016
+[Stage II/RectifiedFlow-B] epoch 0008/10  loss=118.7990
+[Stage II/RectifiedFlow-B] epoch 0010/10  loss=116.4188
+[Stage I] epoch 0002/10  loss=157.1857
+[Stage I] epoch 0004/10  loss=129.4557
+[Stage I] epoch 0006/10  loss=121.5998
+[Stage I] epoch 0008/10  loss=123.0404
+[Stage I] epoch 0010/10  loss=119.7222
+[Stage II/RectifiedFlow-B] epoch 0002/10  loss=142.6530
+[Stage II/RectifiedFlow-B] epoch 0004/10  loss=130.4066
+[Stage II/RectifiedFlow-B] epoch 0006/10  loss=130.1417
+[Stage II/RectifiedFlow-B] epoch 0008/10  loss=122.2245
+[Stage II/RectifiedFlow-B] epoch 0010/10  loss=114.8684
+[Stage I] epoch 0002/10  loss=132.1845
+[Stage I] epoch 0004/10  loss=121.0602
+[Stage I] epoch 0006/10  loss=115.3197
+[Stage I] epoch 0008/10  loss=115.2913
+[Stage I] epoch 0010/10  loss=113.3396
+[Stage II/RectifiedFlow-B] epoch 0002/10  loss=139.9333
+[Stage II/RectifiedFlow-B] epoch 0004/10  loss=126.6108
+[Stage II/RectifiedFlow-B] epoch 0006/10  loss=123.5228
+[Stage II/RectifiedFlow-B] epoch 0008/10  loss=116.7718
+[Stage II/RectifiedFlow-B] epoch 0010/10  loss=112.3109
+[Server] client 0 synthesized 72 samples
+[Server] client 1 synthesized 72 samples
+[Server] client 2 synthesized 72 samples
+[Server] client 3 synthesized 72 samples
+[Server] client 4 synthesized 72 samples
+[Server] client 5 synthesized 72 samples
+[Server] client 6 synthesized 72 samples
+[Metrics/SW2] private~ref=0.6529  synth~ref=0.7409  transported~ref=0.3711
+[Metrics/MMD] min=0.003651 mean=0.005705
+[Classifier/RF-synth] train_n=504  test_n=600  n_estimators=200  test_acc=0.732
+[Classifier/RF-ref_only] train_n=50  test_n=600  n_estimators=200  test_acc=0.795
+[Classifier/RF-ref+syn] train_n=554  test_n=600  n_estimators=200  test_acc=0.763
+Final stats: {'clf_loss': nan, 'train_n': 504.0, 'acc': 0.7316666666666667, 'test_n': 600.0, 'mmd_rbf_min': 0.0036506899632513523, 'mmd_rbf_mean': 0.005705357257587214, 'sw2_private_ref': 0.6528877019882202, 'sw2_synth_ref': 0.7409304976463318, 'sw2_synth_transported_ref': 0.3711465895175934, 'clf_loss_ref_only': nan, 'acc_ref_only': 0.795, 'clf_loss_ref_plus_synth': nan, 'acc_ref_plus_synth': 0.7633333333333333}
