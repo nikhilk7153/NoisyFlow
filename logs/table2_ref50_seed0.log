@@ -1,0 +1,48 @@
+/home/nk725/.venv/lib/python3.12/site-packages/opacus/privacy_engine.py:96: UserWarning: Secure RNG turned off. This is perfectly fine for experimentation as it allows for much faster training performance, but remember to turn it on and retrain one last time before production with ``secure_mode`` turned on.
+  warnings.warn(
+03/24/2026 21:48:49:WARNING:Ignoring drop_last as it is not compatible with DPDataLoader.
+sys:1: UserWarning: Full backward hook is firing when gradients are computed with respect to module outputs since no inputs require gradients. See https://docs.pytorch.org/docs/main/generated/torch.nn.Module.html#torch.nn.Module.register_full_backward_hook for more details.
+03/24/2026 21:48:55:WARNING:Ignoring drop_last as it is not compatible with DPDataLoader.
+03/24/2026 21:49:02:WARNING:Ignoring drop_last as it is not compatible with DPDataLoader.
+[Stage I] epoch 0006/30  loss=178.6744
+[Stage I] epoch 0012/30  loss=160.2112
+[Stage I] epoch 0018/30  loss=152.9175
+[Stage I] epoch 0024/30  loss=139.0782
+[Stage I] epoch 0030/30  loss=145.3108
+[Stage I] DP eps=10.542, delta=1e-05
+[Stage II/RectifiedFlow-B] epoch 0006/30  loss=98.6272
+[Stage II/RectifiedFlow-B] epoch 0012/30  loss=87.5373
+[Stage II/RectifiedFlow-B] epoch 0018/30  loss=87.6781
+[Stage II/RectifiedFlow-B] epoch 0024/30  loss=83.7209
+[Stage II/RectifiedFlow-B] epoch 0030/30  loss=81.0632
+[Stage I] epoch 0006/30  loss=143.6484
+[Stage I] epoch 0012/30  loss=124.7838
+[Stage I] epoch 0018/30  loss=120.4756
+[Stage I] epoch 0024/30  loss=119.0432
+[Stage I] epoch 0030/30  loss=123.6238
+[Stage I] DP eps=3.771, delta=1e-05
+[Stage II/RectifiedFlow-B] epoch 0006/30  loss=86.9323
+[Stage II/RectifiedFlow-B] epoch 0012/30  loss=88.3034
+[Stage II/RectifiedFlow-B] epoch 0018/30  loss=86.1145
+[Stage II/RectifiedFlow-B] epoch 0024/30  loss=82.7857
+[Stage II/RectifiedFlow-B] epoch 0030/30  loss=80.3523
+[Stage I] epoch 0006/30  loss=159.6339
+[Stage I] epoch 0012/30  loss=141.3008
+[Stage I] epoch 0018/30  loss=131.8297
+[Stage I] epoch 0024/30  loss=127.6248
+[Stage I] epoch 0030/30  loss=129.6743
+[Stage I] DP eps=4.777, delta=1e-05
+[Stage II/RectifiedFlow-B] epoch 0006/30  loss=99.7559
+[Stage II/RectifiedFlow-B] epoch 0012/30  loss=87.8743
+[Stage II/RectifiedFlow-B] epoch 0018/30  loss=83.9830
+[Stage II/RectifiedFlow-B] epoch 0024/30  loss=82.3058
+[Stage II/RectifiedFlow-B] epoch 0030/30  loss=82.7890
+[Server] client 0 synthesized 2000 samples
+[Server] client 1 synthesized 2000 samples
+[Server] client 2 synthesized 2000 samples
+[Metrics/SW2] private~ref=0.6842  synth~ref=0.7304  transported~ref=0.2193
+[Metrics/MMD] min=0.001255 mean=0.003077
+[Classifier/RF-synth] train_n=6000  test_n=1324  n_estimators=200  test_acc=0.788
+[Classifier/RF-ref_only] train_n=50  test_n=1324  n_estimators=200  test_acc=0.835
+[Classifier/RF-ref+syn] train_n=6050  test_n=1324  n_estimators=200  test_acc=0.789
+Final stats: {'clf_loss': nan, 'train_n': 6000.0, 'acc': 0.7877643504531722, 'test_n': 1324.0, 'mmd_rbf_min': 0.0012552549596875906, 'mmd_rbf_mean': 0.0030768613408630094, 'sw2_private_ref': 0.6841995120048523, 'sw2_synth_ref': 0.7303863167762756, 'sw2_synth_transported_ref': 0.2193397432565689, 'epsilon_flow_max': 10.541786966226343, 'epsilon_total_max': 10.541786966226343, 'clf_loss_ref_only': nan, 'acc_ref_only': 0.8345921450151057, 'clf_loss_ref_plus_synth': nan, 'acc_ref_plus_synth': 0.7885196374622356}

@@ -52,36 +52,32 @@ stage1:
     grad_sample_mode: functorch
 
 stage2:
-  option: B        # post-processing: OT trained on synthetic source only, no DP cost
-  pair_by_label: false   # ICNN dual OT learns over full marginals; no per-class pairing needed
+  option: C        # mixed: real + synthetic; DP-SGD on real data only (paper uses Option C)
+  pair_by_label: false
   pair_by_ot: false
-  epochs: 100
+  epochs: 30
   lr: 0.001
-  max_grad_norm: 1.0      # clip ICNN parameter gradients — prevents potential divergence
-  hidden: [128, 128]      # ICNN hidden layers for d=50
-  act: relu               # relu is more numerically stable than softplus for ICNN
-  add_strong_convexity: 0.5   # λ/2 * |x|² term enforces convexity and bounds the gradient
+  weight_decay: 1.0e-3   # L2 regularization prevents ICNN weight explosion
+  hidden: [128, 128]
+  act: relu
+  add_strong_convexity: 1.0
   flow_steps: 50
-  conj_steps: 50          # more inner steps → more accurate Φ*(y) estimate
-  conj_lr: 0.05           # smaller inner step for stability in d=50
-  conj_clamp: 5.0         # tighter clamp on x during inner optimization
+  conj_steps: 20
+  conj_lr: 0.05
+  conj_clamp: 3.0
   dp:
-    enabled: false  # Stage II is post-processing; DP budget comes entirely from Stage I
-    max_grad_norm: 1.0
-    noise_multiplier: 1.0
-    delta: 1e-5
-    grad_sample_mode: functorch
+    enabled: false   # Stage II is post-processing of DP Stage I output; no additional ε
   cellot:
-    enabled: false   # do NOT use CellOT adversarial (only supports Option A)
+    enabled: false
   rectified_flow:
-    enabled: false   # do NOT use RectifiedFlow (random-coupling; scrambles class labels)
+    enabled: false
 
 stage3:
   epochs: 30
   lr: 0.001
   hidden: [128, 128]
   flow_steps: 50
-  M_per_client: 5000
+  M_per_client: 2000  # 3 clients × 2000 = 6000 total synthetic samples
   ref_train_size: 100
 
 privacy_curve:

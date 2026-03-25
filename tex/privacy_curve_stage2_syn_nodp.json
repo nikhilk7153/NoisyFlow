@@ -4,23 +4,23 @@
   "results": [
     {
       "noise_multiplier": 0.5,
-      "epsilon": 105.888527117483,
-      "utility": 0.8738670694864048
+      "epsilon": 105.88852711721893,
+      "utility": 0.8783987915407855
     },
     {
       "noise_multiplier": 1.0,
       "epsilon": 37.633687472303755,
-      "utility": 0.8632930513595166
+      "utility": 0.8678247734138973
     },
     {
       "noise_multiplier": 2.0,
       "epsilon": 14.84056471168065,
-      "utility": 0.8413897280966768
+      "utility": 0.8527190332326284
     },
     {
       "noise_multiplier": 4.0,
-      "epsilon": 6.3360332412805,
-      "utility": 0.790785498489426
+      "epsilon": 6.336033241280497,
+      "utility": 0.8255287009063444
     }
   ]
 }

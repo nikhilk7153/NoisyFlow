@@ -127,9 +127,9 @@ def main() -> None:
             "private": "#54A24B",
         }
         series: List[Tuple[str, List[Tuple[float, float]], str]] = [
-            ("Stage2 synth-only (no DP; ε=Stage1)", syn_points, colors["syn"]),
-            ("Stage2 mixed (DP; ε=Stage1+Stage2)", mixed_points, colors["mixed"]),
-            ("Stage2 private-only (DP; ε=Stage1+Stage2)", priv_points, colors["private"]),
+            ("Option B", syn_points, colors["syn"]),
+            ("Option C", mixed_points, colors["mixed"]),
+            ("Option A", priv_points, colors["private"]),
         ]
         for label, pts, color in series:
             xs = [x for x, _ in pts]
